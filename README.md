@@ -3,6 +3,7 @@ Capacitación: Git, bash y docker
 Integrantes:
 - Andrés Muñoz 
 - Deisy Sapaico
+- Pedro Vega
 
 1. ¿Qué es y para qué sirve GIT?
 
