@@ -46,3 +46,35 @@ $ git config --global user.email "you@example.com"
 $ git config --global user.name "Your Name"
 ```
 
+#Ejercicio 2
+
+1. ¿Que importancia tienen los tags en un proyecto?
+Ayudan a versionar proyectos
+
+
+2. ¿Cual es la diferencia entre un tag normal y un tag anotado en git?
+En un tag normal solo indicamos la versión. En un tag anotado colocamos un mensaje asociado al tag.
+
+3. ¿Cómo se sube todos los tags de git que hay en mi local?
+Los cambios se suben con comando: git push origin --tags
+
+
+4. ¿Es necesario loguearse cada vez que subo una imagen a dockerhub?
+No, con loguearse una vez basta. Sin embargo se debe estar logueado para subir una imagen la primera vez.
+
+5. ¿Qué es y para que sirve docker?
+Docker es una plataforma  que permite desarrollar , implementar y ejecutar aplicaciones dentro de contenedores.
+
+6. ¿Cual es la diferencia entre docker y VirtualBox ?
+Docker usa las caracteristicas del kernel de un sistema operativo para ejecutar contenedores. Vitualbox usa los recursos del hardware de la maquina en que nos encontremos.
+
+7. ¿Es necesario depender de una imagen de docker base al crear una imagen nueva?
+Generalmente si. Sin embargo, puedo crear una imagen desde cero, sin tener una imagen base.
+
+8. ¿Por que debo anteponer el nombre de usuario en una imagen de docker nueva?
+Por que de esa manera docker reconoce mi usuario de docker y sabe a repositorio debe ser subido.
+
+9. ¿Que pasa si creo una imagen sin especificar una version o tag, con que version se crea?
+Se crea con el tag 'latest'
+7. 
+
