@@ -46,7 +46,7 @@ $ git config --global user.email "you@example.com"
 $ git config --global user.name "Your Name"
 ```
 
-#Ejercicio 2
+#Parte 4
 
 1. ¿Que importancia tienen los tags en un proyecto?
 Ayudan a versionar proyectos
@@ -76,5 +76,24 @@ Por que de esa manera docker reconoce mi usuario de docker y sabe a repositorio 
 
 9. ¿Que pasa si creo una imagen sin especificar una version o tag, con que version se crea?
 Se crea con el tag 'latest'
-7. 
+
+# Parte 5
+
+1.1 ¿Porqué es necesario crear un contenedor con esta bandera -it?
+
+Para poder interactuar (visualizando la ejecuciòn en consola) con la copia de la imagen docker(contenedor) 
+
+
+1.2 ¿Qué pasa si no le pongo -it?
+
+Si no ponemos -it, el contenedor se crea en un proceso por debajo (background) y no me permitiria acceder al contenedor 
+
+1.3 ¿Para qué sirve ejecutar el comando bash al 
+ejecutar una imagen?
+
+Sirve para acceder al contenedor mediante el la interface de bash
+
+2.1  ¿Cuál es la diferencia entre docker ps y docker ps -a?
+
+Con **docker ps** vemos los contenedores activos y con **docker ps -a** visualizamos los contenedores con cualquier estado.
 
