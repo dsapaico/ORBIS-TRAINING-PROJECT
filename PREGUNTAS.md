@@ -97,3 +97,6 @@ Sirve para acceder al contenedor mediante el la interface de bash
 
 Con **docker ps** vemos los contenedores activos y con **docker ps -a** visualizamos los contenedores con cualquier estado.
 
+3.1 Agregar el comando para ejecutar el contenedor
+
+docker exec -it idContenedor bash
