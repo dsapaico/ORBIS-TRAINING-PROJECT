@@ -100,3 +100,32 @@ Con **docker ps** vemos los contenedores activos y con **docker ps -a** visualiz
 3.1 Agregar el comando para ejecutar el contenedor
 
 docker exec -it idContenedor bash
+
+
+5.1. ¿Cuál es la diferencia entre una imagen y un contenedor?
+Una imagen es una especie de plantilla. Un contenedor es una instancia a traves de la cual voi a acceder a una imagen
+
+2. ¿Cómo listo las imágenes que hay en mi computadora?
+ls
+
+3. ¿Cómo salgo de un contenedor de docker?
+exit
+
+4. ¿Se elimina el contenedor al salir de ella?
+NO
+5. ¿Cómo elimino un contenedor?
+docker rm idContenedor
+
+6. ¿Para qué es necesario el flag `-i`, `-t`, `--rm`?
+-i : permite interactuar con el contenedor una vez creado
+-t : permite indicar que la interface sea por defecto (terminal)
+--rm: remueve el contenedor una vez se haya detenido
+
+7. ¿Cómo verifico que el archivo creado se encuentra en la imagen?
+
+creo un contenedor : docker run -ti
+listo ls directorios : ls
+Verifico el archivo: cat rutaDelArchivo
+
+8. ¿Cómo se comenta una linea de código en Dockerfile?
+Es iniciando la línea con el símbolo **#**
