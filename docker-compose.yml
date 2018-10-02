@@ -1,0 +1,7 @@
+version: '2'
+services:
+  nginx:
+    image: dsapaicoa/orbis-training-docker:1.0.0
+    container_name: nginx-deisy
+    ports:
+      - 1080:80
