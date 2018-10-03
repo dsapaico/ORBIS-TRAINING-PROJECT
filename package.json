@@ -1,0 +1,12 @@
+{
+  "name": "orbis-training-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "remarker serve --source resources/preguntas.md --port 3030",
+    "release": "remarker build --source resources/preguntas.md"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@kobi-kadosh/remarker": "^1.8.2"
+  }
+}
