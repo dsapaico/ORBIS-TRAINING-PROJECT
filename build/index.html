@@ -1,9 +1,35 @@
-# Ejercicio 1
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <style type="text/css">
+      body {
+  font-family: 'Avenir Next', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'メイリオ', sans-serif;
+}
+h1, h2, h3 {
+  font-weight: bold;
+}
+.remark-code,
+.remark-inline-code {
+  font-family: 'Menlo', 'Monaco', 'Courier new', monospace;
+}
+
+.remark-slide-content.inverse {
+  color: #f3f3f3;
+  background-color: #272822;
+}
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source"># Ejercicio 1
 Capacitación: Git, bash y docker
 Integrantes:
 - Andrés Muñoz 
 - Deisy Sapaico
-- Pedro Vega
+- Pedro Pairazaman
 
 1. ¿Qué es y para qué sirve GIT?
 
@@ -16,6 +42,8 @@ Plataformas donde se alojan repositorios de Git permitiendo la colaboración ent
 3. ¿Qué es y para qué sirve el SSH?
 
 Es un protocolo que permite la comunicación entre una maquina local con un servidor de git.
+
+---
 
 4. ¿Que pasa si cambio de PC? ¿Tendré que generar el SSH nuevamente?¿Por qué?
 
@@ -128,4 +156,18 @@ listo ls directorios : ls
 Verifico el archivo: cat rutaDelArchivo
 
 8. ¿Cómo se comenta una linea de código en Dockerfile?
-Es iniciando la línea con el símbolo **#**
+Es iniciando la línea con el símbolo **#**</textarea>
+    <script src="remark.js"></script>
+    
+    <script>
+      window.slideshow = remark.create({})
+    </script>
+    <script>
+      
+      ;window.LiveReloadOptions = {
+        host: 'localhost',
+        port: '35729'
+      };
+    </script>
+  </body>
+</html>

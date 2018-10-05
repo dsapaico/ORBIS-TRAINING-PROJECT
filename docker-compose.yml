@@ -1,7 +1,14 @@
-version: '2'
+version: '3'
 services:
   nginx:
-    image: dsapaicoa/orbis-training-docker:1.0.0
+    image: dsapaicoa/orbis-training-docker:2.0.0
     container_name: nginx-deisy
+    volumes:
+      - ./:/app/    
+    working_dir: /app/    
+    expose:
+      - "3030"
+      - "35729"
     ports:
-      - 1080:80
+      - 1042:3030
+    command: npm start
