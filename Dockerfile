@@ -2,5 +2,5 @@ FROM node:10.10.0-slim
 
 RUN mkdir app
 
-COPY resources/PREGUNTAS.md /app
-COPY resources/INTRO.md /app 
+COPY resources/preguntas.md /app
+COPY resources/intro.md /app 

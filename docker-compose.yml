@@ -12,3 +12,9 @@ services:
     ports:
       - 1042:3030
     command: npm start
+  test:
+    image: node:10.10.0-slim
+    container_name: node-deisy
+    depends_on:
+      - nginx
+    command: curl nginx:3030
