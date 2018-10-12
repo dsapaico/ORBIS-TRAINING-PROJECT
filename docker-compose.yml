@@ -11,7 +11,9 @@ services:
       - "35729"
     ports:
       - 1042:3030
-    command: npm start
+    command: >
+      bash -c "npm install 
+      && npm start"
   test:
     image: node:10.10.0-slim
     container_name: node-deisy
