@@ -156,7 +156,33 @@ listo ls directorios : ls
 Verifico el archivo: cat rutaDelArchivo
 
 8. ¿Cómo se comenta una linea de código en Dockerfile?
-Es iniciando la línea con el símbolo **#**</textarea>
+Es iniciando la línea con el símbolo **#**
+
+
+Parte 8. paso 5
+
+1. ¿Qué es bash? ¿Qué significa?
+Es un programa que ejecuta comandos.  Sus siglas significan 'Bourne-again shell'
+
+2. ¿Cómo ejecuto un archivo bash?
+Especificando en la primera linea **#!/bin/sh**, luego ejecuto el archivo con el comando: **./[mi_script]**
+
+3. ¿Qué pasa si no especifico en un `.sh`, la linea `#!/bin/bash`?
+El sistema por defecto lo considera al script como un archivo bash, incluso sin necesidad
+de especificar la extensión **.sh**
+
+4. ¿Se puede cambiar el modo bash (`/bin/bash`) a otro tipo de ejecución?
+Si, por ejemplo para ejecutar el archivo con **python**
+
+5. ¿Cómo se envía variables de entorno por Docker CLI y docker-compose?
+Por docker CLI, enviamos una variable de entorno con el comando -e nombreVariableEntorno="valor".  Por docker-compose se define la variable en el archivo .yml con la sgte sintaxis:
+
+```
+     environment:
+      - nombre="xD"
+```
+
+</textarea>
     <script src="remark.js"></script>
     
     <script>

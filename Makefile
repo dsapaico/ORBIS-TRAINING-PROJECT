@@ -26,6 +26,18 @@ mi_tarea_por_defecto:
 mi_primera_tarea:
 	@echo "mi primer target"
 
+install:
+	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ dsapaicoa/orbis-training-docker:2.0.0 npm install
+
+start:
+	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 dsapaicoa/orbis-training-docker:2.0.0 npm start
+
+release:
+	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 dsapaicoa/orbis-training-docker:2.0.0 npm run release
+
+greet:
+	docker run -e nombre=${nombre} --entrypoint="/app/resources/example.sh" -v $(PWD)/:/app/ --rm -ti dsapaicoa/orbis-training-docker:2.0.0
+
 # funciones
 define mostrar_user
 	@cat app/telefonos.txt | grep $(name) | awk '{print $$2}'
