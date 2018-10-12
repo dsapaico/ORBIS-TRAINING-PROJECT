@@ -11,12 +11,17 @@ services:
       - "35729"
     ports:
       - 1042:3030
+    environment:
+      - nombre="xD"
     command: >
       bash -c "npm install 
-      && npm start"
+      && npm start && ./resources/example.sh"
   test:
     image: node:10.10.0-slim
     container_name: node-deisy
-    depends_on:
+    depends_on: 
       - nginx
-    command: curl nginx:3030
+    links:
+      - nginx
+    restart: on-failure
+    command: curl http://nginx:3030

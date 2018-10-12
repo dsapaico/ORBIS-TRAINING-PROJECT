@@ -7,3 +7,6 @@ docker run -it -v $PWD/:/app/ --workdir=/app/ dsapaicoa/orbis-training-docker:2.
 docker run -it -v $PWD/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 dsapaicoa/orbis-training-docker:2.0.0 npm start
 docker run -it -v $PWD/:/app/ --workdir=/app/ --expose 3030-35729 -p 1042:3030 dsapaicoa/orbis-training-docker:2.0.0 npm start
 docker run -it -v $PWD/:/app/ --workdir=/app/ --expose 3030-35729 -p 1042:3030 dsapaicoa/orbis-training-docker:2.0.0 npm run release
+
+Parte 8. paso 5
+docker run --entrypoint="echo" --rm -ti dsapaicoa/orbis-training-docker:2.0.0 Ejecutando contenedor...

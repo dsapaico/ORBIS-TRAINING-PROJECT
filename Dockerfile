@@ -4,3 +4,5 @@ RUN mkdir app
 
 COPY resources/preguntas.md /app
 COPY resources/intro.md /app 
+
+COPY resources/example.sh /resources

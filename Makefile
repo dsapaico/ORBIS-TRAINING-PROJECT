@@ -1,7 +1,7 @@
 AUTHOR_NAME = "Daisy"
 
 # targets
-all: logger_file mostrar
+#all: logger_file mostrar
 
 despliegue:
 	@echo "Esta deployando... ${name}"
