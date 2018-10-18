@@ -155,4 +155,10 @@ Por docker CLI, enviamos una variable de entorno con el comando -e nombreVariabl
      environment:
       - nombre="xD"
 ```
+Parte 9. paso 8
 
+1. ¿Para qué sirve el archivo `Makefile`?
+Sirve para definir comandos qe contienen instucciones personalizadas, que pueden ser ejecutados mediante un interprete de linea de comandos
+
+2. ¿Qué es un `target` en `Makefile`?
+Un target permite definir uno o varios comandos, en una sola instrucción

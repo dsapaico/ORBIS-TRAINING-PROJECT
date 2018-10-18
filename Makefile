@@ -1,5 +1,12 @@
-AUTHOR_NAME = "Daisy"
+NAME = "Daisy"
+NAME_IMAGE = dsapaicoa/orbis-training-docker
+DOCKER_TAG = 2.0.0
+DOCKER_IMAGE = $(NAME_IMAGE):$(DOCKER_TAG)
 
+
+include ./Makefile-task.mk
+
+.PHONY: all clean Makefile-task.mk
 # targets
 #all: logger_file mostrar
 
@@ -27,16 +34,19 @@ mi_primera_tarea:
 	@echo "mi primer target"
 
 install:
-	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ dsapaicoa/orbis-training-docker:2.0.0 npm install
+	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ $(DOCKER_IMAGE) npm install
 
 start:
-	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 dsapaicoa/orbis-training-docker:2.0.0 npm start
+	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 $(DOCKER_IMAGE) npm start
 
 release:
-	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 dsapaicoa/orbis-training-docker:2.0.0 npm run release
+	docker run --rm -it -v $(PWD)/:/app/ --workdir=/app/ --expose 3030-35729 -p 3030:3030 $(DOCKER_IMAGE) npm run release
 
 greet:
-	docker run -e nombre=${nombre} --entrypoint="/app/resources/example.sh" -v $(PWD)/:/app/ --rm -ti dsapaicoa/orbis-training-docker:2.0.0
+	docker run -e nombre=${name} --entrypoint="/app/resources/example.sh" -v $(PWD)/:/app/ --rm -ti $(DOCKER_IMAGE) 
+
+orbis-training-project:
+	@echo 'Hola recursos!'
 
 # funciones
 define mostrar_user
