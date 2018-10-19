@@ -162,3 +162,98 @@ Sirve para definir comandos qe contienen instucciones personalizadas, que pueden
 
 2. ¿Qué es un `target` en `Makefile`?
 Un target permite definir uno o varios comandos, en una sola instrucción
+
+Parte 10. Paso 7
+
+1. ¿Qué significa el comando -d?
+El comando -d indica la existencia de un directorio. Como ejemplo temnemos lo ejecutado en la instrucción " @if [ ! -d "$(GIT_BRANCH_DIR)" ]; then mkdir $(GIT_BRANCH_DIR); fi" 
+
+2. ¿Porqué la sentencia comienza con @?
+Porque de esta manera le decimos que el comando que prosigue luego de '@' no se muestre en el comando de la ejecución en consola.
+
+
+3. ¿Para qué sirve el comando mkdir?
+Sirva para crear un directorio. Ej. mkdir nuevodir
+
+
+4. Explicar lo que hace la función mkdir_deploy_dir
+La funcion 'mkdir_deploy_dir' verifica: si no existe la ruta "/ORBIS-TRAINING-PROJECT/deploy/gh-pages" entonces procederá  a crear dicha carpeta en la ruta.
+
+```
+define mkdir_deploy_dir
+    @if [ ! -d "$(GIT_BRANCH_DIR)" ]; then mkdir $(GIT_BRANCH_DIR); fi
+endef
+```
+
+Parte 10. Paso 8
+
+1. ¿Para qué sirve el uso de \?
+Sirve para poder ordenar las instrucciones una debajo de otra, en el archivo makefile
+
+```
+define git_init
+    @cd $(GIT_BRANCH_DIR) && \
+     rm -rf $(GIT_BRANCH_DIR)/.git && \
+     git init
+endef
+```
+
+2. ¿Para qué sirve el uso de &&?
+ "&&" significa "and" . Sirve para unir dos o más instrucciones en un solo comando
+
+
+3. ¿Qué función cumple usar los argumentos -rf?
+Significa "remove folder", lo cual indica que se va aeliminar una carpeta
+
+
+4. Explicar lo que hace la función git_init (linea por linea)
+@cd $(GIT_BRANCH_DIR) && \  -> Ir a la ruta /ORBIS-TRAINING-PROJECT/deploy/gh-pages
+rm -rf $(GIT_BRANCH_DIR)/.git && \  -> Eliminar el directorio ".git"
+ git init  ->  Inicializar el proyecto en git creando una nueva carpeta .git
+
+
+Parte 10. Paso 9
+```
+define git_config
+    $(eval GIT_USER_NAME := $(shell git log --pretty=format:"%an" | head -n 1))
+    $(eval GIT_USER_EMAIL := $(shell git log --pretty=format:"%ae" | head -n 1))
+    @cd $(GIT_BRANCH_DIR) && \
+     git config user.email "$(GIT_USER_EMAIL)" && \
+     git config user.name "$(GIT_USER_NAME)"
+endef
+```
+
+1. ¿Para qué sirve el uso de eval?
+Permite evaluar si la variable está o no definida. Si no lo está, se procede a indicar su definición
+
+
+2. ¿Para qué sirve el uso de shell?
+Sirva para indicar que las instrucciones seguidas de "shell" son instrucciones a ejecutar en el interprete de comandos shell
+
+
+3. ¿Para qué sirve el uso de git log --pretty=format:"%an"?
+git log -> Muestra una bitácora del repositorio a nivel local en la rama en la que se encuentra actualmente.
+--pretty=format:"%an"  -> Muestra los nombres de los autores de los commits que se encuentran en la bitácora
+
+4. ¿Cuál es la diferencia en usar git config y git config --global?
+git config, permite cambiar  el valor de las variables de entorno en el repositorio en el cual estamos situados
+ git config --global, permite cambiar  el valor de las variables de entorno en todos los repositorios de mi pc
+
+```
+git config --global user.email "pedro_pps@hotmail.com"
+```
+
+5. Explicar lo que hace la función git_config (línea por línea)
+
+    $(eval GIT_USER_NAME := $(shell git log --pretty=format:"%an" | head -n 1))  -> Se indica el valor que tendrá la variable "GIT_USER_NAME". tomandola del log(lista todos los usuarios de la bitácora y muestra el ultimo que realizó cambios)
+    $(eval GIT_USER_EMAIL := $(shell git log --pretty=format:"%ae" | head -n 1))  -> Se indica el valor que tendrá la variable "GIT_USER_EMAIL". tomandola del log(lista todos los emails de usuarios de la bitácora y muestra el ultimo que realizó cambios)
+    @cd $(GIT_BRANCH_DIR) && \  -> Nos situqmos en la ruta /ORBIS-TRAINING-PROJECT/deploy/gh-pages
+     git config user.email "$(GIT_USER_EMAIL)" && \  -> En el repositorio "/ORBIS-TRAINING-PROJECT/deploy/gh-pages" asignamos un valor a la variable "user.email" 
+     git config user.name "$(GIT_USER_NAME)" ->  En el repositorio "/ORBIS-TRAINING-PROJECT/deploy/gh-pages" asignamos un valor a la variable "user.name" 
+
+Parte 10. Paso 10
+
+    ¿Para qué sirve el uso de awk?
+    ¿Para qué sirve el uso de sed?
+    ¿Para qué sirve el uso de git log --pretty=format:"%an"?
+    Explicar lo que hace la función git_add_remote_repository

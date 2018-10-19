@@ -4,7 +4,8 @@ DOCKER_TAG = 2.0.0
 DOCKER_IMAGE = $(NAME_IMAGE):$(DOCKER_TAG)
 
 
-include ./Makefile-task.mk
+include makefiles/task.mk
+include makefiles/deploy-ghpages.mk
 
 .PHONY: all clean Makefile-task.mk
 # targets

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "remarker serve --source resources/preguntas.md --port 3030",
-    "release": "remarker build --source resources/preguntas.md"
+    "release": "remarker build --source resources/preguntas.md --dest ./deploy/build"
   },
   "license": "ISC",
   "devDependencies": {
